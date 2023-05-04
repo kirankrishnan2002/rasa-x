@@ -14,8 +14,6 @@ logger = logging.getLogger(__name__)
 class AlexaConnector(InputChannel):
     """A custom http input channel for Alexa.
 
-    You can find more information on custom connectors in the 
-    Rasa docs: https://rasa.com/docs/rasa/user-guide/connectors/custom-connectors/
     """
 
     @classmethod
@@ -42,7 +40,7 @@ class AlexaConnector(InputChannel):
             # check to see if the user is trying to launch the skill
             intenttype = payload["request"]["type"]
 
-            # if the user is starting the skill, let them know it worked & what to do next
+            # if the user is starting the skill, let Alexa  know it worked & what to do next
             if intenttype == "LaunchRequest":
                 message = "Hello! Welcome to this Rasa-powered Alexa skill. You can start by saying 'hi'."
                 session = "false"
